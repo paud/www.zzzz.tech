@@ -1,159 +1,560 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Simpsuit - Multi-language Smart Browser</title>
+<title>� 睡梦罗汉信息技术研发实验室</title>
 <style>
+/* 睡梦禅意科研风格基础样式 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@300;400;500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  font-family: 'Segoe UI', sans-serif;
-  margin: 0; padding: 0;
-  background: #f8f9fa;
-  color: #333;
+  font-family: 'Noto Sans SC', sans-serif;
+  background: linear-gradient(135deg, #131523 0%, #1a2332 50%, #0f1419 100%);
+  min-height: 100vh;
+  color: #b8c5d6;
   text-align: center;
+  overflow-x: hidden;
 }
+
+/* 云雾梦境装饰 */
+.cloud-fog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  background: 
+    radial-gradient(ellipse at 20% 20%, rgba(100, 150, 200, 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(80, 120, 180, 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at 40% 70%, rgba(120, 160, 200, 0.03) 0%, transparent 50%);
+  animation: drift 20s infinite ease-in-out alternate;
+}
+
+@keyframes drift {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(30px, 30px); }
+}
+
+/* 禅意波纹点阵 */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(rgba(150, 180, 220, 0.05) 1px, transparent 1px);
+  background-size: 30px 30px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* 头部样式 */
 header {
-  background: #0078d7;
-  color: white;
-  padding: 20px 10px;
+  background: rgba(19, 21, 35, 0.85);
+  backdrop-filter: blur(20px);
+  padding: 40px 20px;
+  position: relative;
+  z-index: 1;
+  border-bottom: 1px solid rgba(150, 180, 220, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
+
+.avatar {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 4px solid rgba(150, 180, 220, 0.3);
+  margin: 0 auto 20px;
+  background: radial-gradient(circle, rgba(50, 60, 80, 0.8) 0%, rgba(30, 40, 60, 0.9) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 70px;
+  box-shadow: 0 0 40px rgba(150, 180, 220, 0.2), inset 0 0 30px rgba(150, 180, 220, 0.1);
+  animation: glow 4s infinite ease-in-out, float-slow 6s infinite ease-in-out;
+}
+
+h1 {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 2.8em;
+  font-weight: 300;
+  color: #d4e0f0;
+  margin-bottom: 12px;
+  letter-spacing: 8px;
+  text-shadow: 0 2px 20px rgba(150, 180, 220, 0.2);
+}
+
+.subtitle {
+  font-size: 1.2em;
+  color: #8a9bb0;
+  margin-bottom: 20px;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
 nav {
   position: absolute;
-  top: 15px;
-  right: 15px;
+  top: 30px;
+  right: 30px;
 }
+
 nav button {
-  background: white;
-  color: #0078d7;
-  border: none;
-  padding: 5px 10px;
+  background: rgba(30, 40, 60, 0.6);
+  color: #b8c5d6;
+  border: 1px solid rgba(150, 180, 220, 0.3);
+  padding: 6px 14px;
   margin-left: 5px;
-  border-radius: 6px;
+  border-radius: 4px;
   cursor: pointer;
+  font-family: inherit;
+  transition: all 0.4s ease;
+  backdrop-filter: blur(10px);
 }
+
+nav button:hover {
+  background: rgba(150, 180, 220, 0.15);
+  border-color: rgba(150, 180, 220, 0.6);
+  box-shadow: 0 0 20px rgba(150, 180, 220, 0.2);
+  transform: translateY(-1px);
+}
+
+/* 主体内容 */
 main {
-  padding: 40px 20px;
+  padding: 50px 20px;
+  position: relative;
+  z-index: 1;
+  max-width: 1000px;
+  margin: 0 auto;
 }
-h1 { font-size: 2em; }
-.features {
-  max-width: 600px;
-  margin: 20px auto;
-  text-align: left;
+
+/* 介绍部分 */
+.intro {
+  background: rgba(30, 40, 60, 0.5);
+  border-radius: 12px;
+  padding: 40px;
+  margin-bottom: 50px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(150, 180, 220, 0.15);
+  backdrop-filter: blur(15px);
 }
-.download-btn {
-  background: #0078d7;
-  color: white;
-  padding: 15px 30px;
-  border: none;
+
+.intro p {
+  font-size: 1.1em;
+  line-height: 2;
+  color: #b8c5d6;
+  font-weight: 300;
+}
+
+/* 项目作品区域 */
+h2 {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 2.2em;
+  font-weight: 300;
+  color: #d4e0f0;
+  margin-bottom: 35px;
+  letter-spacing: 4px;
+  text-shadow: 0 2px 20px rgba(150, 180, 220, 0.15);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-bottom: 60px;
+}
+
+.project-card {
+  background: rgba(30, 40, 60, 0.5);
   border-radius: 8px;
-  font-size: 1.2em;
-  cursor: pointer;
-  text-decoration: none;
+  padding: 30px 25px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  transition: all 0.5s ease;
+  border: 1px solid rgba(150, 180, 220, 0.15);
+  backdrop-filter: blur(15px);
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(150, 180, 220, 0.15);
+  border-color: rgba(150, 180, 220, 0.4);
+}
+
+.project-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  background: radial-gradient(circle, rgba(150, 180, 220, 0.15) 0%, rgba(150, 180, 220, 0.05) 100%);
+  border: 1px solid rgba(150, 180, 220, 0.3);
+  animation: float-slow 4s infinite ease-in-out;
+}
+
+.project-card h3 {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 1.5em;
+  font-weight: 300;
+  letter-spacing: 2px;
+  color: #d4e0f0;
+  margin-bottom: 12px;
+}
+
+.project-card p {
+  font-size: 0.95em;
+  line-height: 1.8;
+  color: #a0aec0;
+  margin-bottom: 18px;
+  font-weight: 300;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.tag {
+  background: rgba(150, 180, 220, 0.1);
+  color: #b8c5d6;
+  border: 1px solid rgba(150, 180, 220, 0.25);
+  padding: 5px 12px;
+  border-radius: 2px;
+  font-size: 0.8em;
+  letter-spacing: 1px;
+}
+
+.project-link {
   display: inline-block;
-  margin-top: 20px;
+  background: rgba(150, 180, 220, 0.08);
+  color: #d4e0f0;
+  border: 1px solid rgba(150, 180, 220, 0.3);
+  padding: 10px 24px;
+  border-radius: 2px;
+  text-decoration: none;
+  font-weight: 300;
+  letter-spacing: 1px;
+  transition: all 0.4s ease;
 }
-/* webviewRuntime按钮弱化样式 */
-a[href*="webview2.exe"] {
-  background: #a0c8e0 !important;
-  color: #000000 !important;
-  opacity: 0.7;
-  font-size: 1em !important;
-  padding: 12px 25px !important;
+
+.project-link:hover {
+  background: rgba(150, 180, 220, 0.15);
+  border-color: rgba(150, 180, 220, 0.6);
+  box-shadow: 0 4px 20px rgba(150, 180, 220, 0.15);
+  transform: translateY(-2px);
 }
+
+/* 技能区域 */
+.skills {
+  background: rgba(30, 40, 60, 0.5);
+  border-radius: 8px;
+  padding: 40px;
+  margin-bottom: 50px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(150, 180, 220, 0.15);
+  backdrop-filter: blur(15px);
+}
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.skill-item {
+  background: rgba(150, 180, 220, 0.08);
+  color: #c8d4e2;
+  border: 1px solid rgba(150, 180, 220, 0.25);
+  padding: 10px 20px;
+  border-radius: 2px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* 联系方式 */
+.contact {
+  background: rgba(30, 40, 60, 0.5);
+  border-radius: 8px;
+  padding: 40px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(150, 180, 220, 0.15);
+  backdrop-filter: blur(15px);
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(150, 180, 220, 0.08);
+  color: #c8d4e2;
+  border: 1px solid rgba(150, 180, 220, 0.25);
+  padding: 12px 24px;
+  border-radius: 2px;
+  text-decoration: none;
+  font-weight: 300;
+  letter-spacing: 1px;
+  transition: all 0.4s ease;
+}
+
+.contact-link:hover {
+  background: rgba(150, 180, 220, 0.15);
+  border-color: rgba(150, 180, 220, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(150, 180, 220, 0.15);
+}
+
+/* 页脚 */
 footer {
-  margin-top: 40px;
-  font-size: 0.9em;
-  color: #777;
+  background: rgba(19, 21, 35, 0.9);
+  padding: 35px;
+  margin-top: 60px;
+  border-top: 1px solid rgba(150, 180, 220, 0.15);
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.3);
+}
+
+footer p {
+  color: #8a9bb0;
+  font-size: 0.95em;
+  font-weight: 300;
+}
+
+.heart {
+  color: #b8c5d6;
+  animation: heartbeat 1.5s infinite, glow 4s infinite ease-in-out;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+/* 响应式适配 */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2em;
+  }
+  h2 {
+    font-size: 1.6em;
+  }
+  .games-grid {
+    grid-template-columns: 1fr;
+  }
+  nav {
+    position: static;
+    margin-top: 15px;
+  }
+}
+
+/* 语言切换 */
+[data-lang] {
+  display: none;
 }
 </style>
 </head>
 <body>
+<div class="cloud-fog"></div>
+
 <header>
-  <h1 data-lang="en">Simpsuit - Smart Automation Browser</h1>
-  <h1 data-lang="zh">Simpsuit - 智能自动化浏览器</h1>
-  <h1 data-lang="ja">Simpsuit - スマート自動化ブラウザ</h1>
   <nav>
     <button onclick="setLanguage('zh')">中文</button>
     <button onclick="setLanguage('en')">English</button>
     <button onclick="setLanguage('ja')">日本語</button>
   </nav>
+  <div class="avatar">💤</div>
+  <h1 data-lang="zh">睡梦罗汉<br/>信息技术研发实验室</h1>
+  <h1 data-lang="en">Sleepy Arhat<br/>Info Tech Research Lab</h1>
+  <h1 data-lang="ja">睡夢羅漢<br/>情報技術研究所</h1>
+  <p class="subtitle" data-lang="zh">在睡梦中悟道，于寂静处研发 🧘</p>
+  <p class="subtitle" data-lang="en">Enlightenment in dreams, research in silence 🧘</p>
+  <p class="subtitle" data-lang="ja">夢の中で悟りを開き、静寂の中で研究 🧘</p>
+  <p style="margin-top: 8px; color: #8a9bb0; font-size: 1em; letter-spacing: 2px;">www.zzzz.tech</p>
 </header>
+
 <main>
-  <p data-lang="en">A browser that can inject scripts, fill forms, click buttons, submit automatically, and save data.</p>
-  <p data-lang="zh">一款可以注入代码、自动填写表单、点击按钮、提交并自保存数据的浏览器。</p>
-  <p data-lang="ja">コードを注入し、フォームを自動入力、ボタンをクリック、送信、データを自動保存できるブラウザです。</p>
-
-  <div class="features">
-    <ul data-lang="en">
-      <li>Script injection for automation, such as auto form filling and file downloading</li>
-      <li>Built-in MCPServer for agent integration</li>
-      <li>Full recording of HTTP(s) traffic, text, scripts, images, and multimedia files</li>
-      <li>Suitable for penetration testing</li>
-      <li>Lightweight desktop application</li>
-      <li>Compatible with almost all mainstream AI models, powerful context manager</li>
-    </ul>
-    <ul data-lang="zh">
-      <li>可注入脚本，实现自动化操作，比如自动填写表单，自动下载文件等</li>
-      <li>带MCPServer，可供智能体调用</li>
-      <li>全量记录HTTP(s)流量，文字，脚本 ，图片，多媒体文件等</li>
-      <li>可用于渗透测试</li>
-      <li>轻量级桌面应用</li>
-      <li>适配几乎所有主流AI模型，强大的Context管理器</li>
-    </ul>
-    <ul data-lang="ja">
-      <li>スクリプト注入による自動化操作（フォーム自動入力やファイル自動ダウンロードなど）</li>
-      <li>MCPServer搭載でエージェントからの呼び出しに対応</li>
-      <li>HTTP(s)トラフィック、テキスト、スクリプト、画像、マルチメディアファイルなどを完全記録</li>
-      <li>ペネトレーションテストにも利用可能</li>
-      <li>軽量なデスクトップアプリ</li>
-      <li>主要なAIモデルにほぼ全対応、強力なコンテキストマネージャ</li>
-    </ul>
+  <!-- 自我介绍 -->
+  <div class="intro">
+    <p data-lang="zh">
+      你好！这里是睡梦罗汉信息技术研发实验室 🏔️<br/>
+      我们信奉「静中悟道，睡而生慧」，在半梦半醒之间寻找技术的真谛。<br/>
+      专注于研发让人放松、平静、治愈的数码产品。<br/>
+      欢迎访问：<a href="https://www.zzzz.tech" style="color: #d4e0f0; text-decoration: none; border-bottom: 1px solid rgba(150, 180, 220, 0.3);">www.zzzz.tech</a>
+    </p>
+    <p data-lang="en">
+      Hello! This is Sleepy Arhat Information Technology Research Lab 🏔️<br/>
+      We believe in "Enlightenment through tranquility, wisdom born from dreams",<br/>
+      seeking the true meaning of technology between wakefulness and sleep.<br/>
+      Focus on developing digital products that help people relax, find peace, and heal.
+    </p>
+    <p data-lang="ja">
+      こんにちは！ここは睡夢羅漢情報技術研究所です 🏔️<br/>
+      「静かに悟りを開き、夢から知恵を生む」を信念に、<br/>
+      覚醒と睡眠の間でテクノロジーの真髄を探しています。<br/>
+      人々をリラックスさせ、平和で癒しを与えるデジタル製品の開発に専念しています。
+    </p>
   </div>
 
-  <a class="download-btn" href="https://github.com/paud/paud.github.io/releases/download/0.1/SimpSuitInstaller.exe" target="_blank" data-lang="en">Download Installer</a>
-  <a class="download-btn" href="https://github.com/paud/paud.github.io/releases/download/0.1/spst.zip" target="_blank" data-lang="en">Download ZIP</a>
-  <a class="download-btn" href="https://github.com/paud/paud.github.io/releases/download/0.1/SimpSuitInstaller.exe" target="_blank" data-lang="zh">下载安装包</a>
-  <a class="download-btn" href="https://github.com/paud/paud.github.io/releases/download/0.1/spst.zip" target="_blank" data-lang="zh">下载 ZIP</a>
-  <a class="download-btn" href="https://github.com/paud/paud.github.io/releases/download/0.1/SimpSuitInstaller.exe" target="_blank" data-lang="ja">インストーラーダウンロード</a>
-  <a class="download-btn" href="https://github.com/paud/paud.github.io/releases/download/0.1/spst.zip" target="_blank" data-lang="ja">ZIPダウンロード</a>
-  
-  <div style="margin: 30px auto; max-width: 600px;">
-    <video width="600" controls poster="img/configModels.jpg">
-      <source src="video/configModels.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </div>
-  
-  <br/><img src="img/1.png" width=600px><br/>
-  <br/><img src="img/2.png" width=600px><br/>
-  <br/><img src="img/3.png" width=600px><br/>
-  <br/><img src="img/4.png" width=600px><br/>
-  <br/><img src="img/5.png" width=600px><br/>
-  <br/><img src="img/6.png" width=600px><br/>
-  <br/><img src="img/7.png" width=600px><br/>
+  <!-- 研发项目 -->
+  <section>
+    <h2 data-lang="zh">实验室项目 🔬</h2>
+    <h2 data-lang="en">Lab Projects 🔬</h2>
+    <h2 data-lang="ja">研究プロジェクト 🔬</h2>
+    
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-icon">😴</div>
+        <h3 data-lang="zh">睡冥想</h3>
+        <h3 data-lang="en">Sleep Meditation</h3>
+        <h3 data-lang="ja">スリープ瞑想</h3>
+        <p data-lang="zh">AI辅助催眠冥想应用，帮助你在梦境中寻找创作灵感。</p>
+        <p data-lang="en">AI-assisted hypnosis meditation app that helps you find creative inspiration in dreams.</p>
+        <p data-lang="ja">AI支援の催眠瞑想アプリ、夢の中で創作のインスピレーションを見つけるお手伝い。</p>
+        <div class="project-tags">
+          <span class="tag">AI</span>
+          <span class="tag">冥想</span>
+          <span class="tag">健康</span>
+        </div>
+        <a href="#" class="project-link" data-lang="zh">了解更多</a>
+        <a href="#" class="project-link" data-lang="en">Learn More</a>
+        <a href="#" class="project-link" data-lang="ja">詳細</a>
+      </div>
 
-  <a class="download-btn" href="https://github.com/paud/paud.github.io/releases/download/0.1/SimpSuitInstaller.exe" target="_blank" data-lang="en">Download Installer</a>
-  <a class="download-btn" href="https://github.com/paud/paud.github.io/releases/download/0.1/spst.zip" target="_blank" data-lang="en">Download ZIP</a>
-  <a class="download-btn" href="https://github.com/paud/paud.github.io/releases/download/0.1/webview2.exe" target="_blank" data-lang="en">Download webviewRuntime</a>
-  <a class="download-btn" href="https://github.com/paud/paud.github.io/releases/download/0.1/SimpSuitInstaller.exe" target="_blank" data-lang="zh">下载安装包</a>
-  <a class="download-btn" href="https://github.com/paud/paud.github.io/releases/download/0.1/spst.zip" target="_blank" data-lang="zh">下载 ZIP</a>
-  <a class="download-btn" href="https://github.com/paud/paud.github.io/releases/download/0.1/webview2.exe" target="_blank" data-lang="zh">下载 webviewRuntime</a>
-  <a class="download-btn" href="https://github.com/paud/paud.github.io/releases/download/0.1/SimpSuitInstaller.exe" target="_blank" data-lang="ja">インストーラーダウンロード</a>
-  <a class="download-btn" href="https://github.com/paud/paud.github.io/releases/download/0.1/spst.zip" target="_blank" data-lang="ja">ZIPダウンロード</a>
-  <a class="download-btn" href="https://github.com/paud/paud.github.io/releases/download/0.1/webview2.exe" target="_blank" data-lang="ja">webviewRuntimeダウンロード</a>
+      <div class="project-card">
+        <div class="project-icon">🌙</div>
+        <h3 data-lang="zh">夜行者代码</h3>
+        <h3 data-lang="en">Night Walker Code</h3>
+        <h3 data-lang="ja">ナイトウォーカーコード</h3>
+        <p data-lang="zh">专为深夜程序员设计的低蓝光开发环境，保护视力更助眠。</p>
+        <p data-lang="en">Low-blue development environment designed for late-night coders, protects eyes and helps sleep.</p>
+        <p data="ja">深夜プログラマーのための低ブルーライト開発環境、目を守り睡眠を助けます。</p>
+        <div class="project-tags">
+          <span class="tag">工具</span>
+          <span class="tag">开发者</span>
+          <span class="tag">健康</span>
+        </div>
+        <a href="#" class="project-link" data-lang="zh">了解更多</a>
+        <a href="#" class="project-link" data-lang="en">Learn More</a>
+        <a href="#" class="project-link" data-lang="ja">詳細</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">🧘</div>
+        <h3 data-lang="zh">静码</h3>
+        <h3 data-lang="en">Silent Code</h3>
+        <h3 data-lang="ja">サイレントコード</h3>
+        <p data-lang="zh">让人静心编码的极简编辑器，去掉一切干扰，让思绪自然流淌。</p>
+        <p data-lang="en">Minimalist editor for focused coding, removes all distractions, lets thoughts flow naturally.</p>
+        <p data-lang="ja">集中力を高めるミニマリストエディタ、あらゆる干渉を排除し、思考を自然に流します。</p>
+        <div class="project-tags">
+          <span class="tag">编辑器</span>
+          <span class="tag">极简</span>
+          <span class="tag">专注</span>
+        </div>
+        <a href="#" class="project-link" data-lang="zh">了解更多</a>
+        <a href="#" class="project-link" data-lang="en">Learn More</a>
+        <a href="#" class="project-link" data-lang="ja">詳細</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">☁️</div>
+        <h3 data-lang="zh">云眠OS</h3>
+        <h3 data-lang="en">CloudSleep OS</h3>
+        <h3 data-lang="ja">クラウドスリープOS</h3>
+        <p data-lang="zh">专为冥想休息设计的轻量操作系统，让电脑也陪你一起睡觉。</p>
+        <p data-lang="en">Lightweight operating system designed for meditation rest, let your computer sleep with you.</p>
+        <p data-lang="ja">瞑想休憩用の軽量OS、コンピュータもあなたと一緒に眠りにつきます。</p>
+        <div class="project-tags">
+          <span class="tag">系统</span>
+          <span class="tag">轻量</span>
+          <span class="tag">冥想</span>
+        </div>
+        <a href="#" class="project-link" data-lang="zh">了解更多</a>
+        <a href="#" class="project-link" data-lang="en">Learn More</a>
+        <a href="#" class="project-link" data-lang="ja">詳細</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 研发领域 -->
+  <section class="skills">
+    <h2 data-lang="zh">研发领域 🔮</h2>
+    <h2 data-lang="en">Research Areas 🔮</h2>
+    <h2 data-lang="ja">研究分野 🔮</h2>
+    <div class="skill-list">
+      <div class="skill-item">冥想辅助AI</div>
+      <div class="skill-item">沉浸式开发环境</div>
+      <div class="skill-item">低干扰设计</div>
+      <div class="skill-item">身心信息技术</div>
+      <div class="skill-item">极简系统</div>
+      <div class="skill-item">梦境计算</div>
+      <div class="skill-item">禅意交互</div>
+    </div>
+  </section>
+
+  <!-- 联系方式 -->
+  <section class="contact">
+    <h2 data-lang="zh">联系我们 📪</h2>
+    <h2 data-lang="en">Contact Us 📪</h2>
+    <h2 data-lang="ja">お問い合わせ 📪</h2>
+    <div class="contact-links">
+      <a href="https://github.com" target="_blank" class="contact-link">
+        <span>🐙</span> GitHub
+      </a>
+      <a href="mailto:info@example.com" class="contact-link">
+        <span>✉️</span> Email
+      </a>
+    </div>
+  </section>
 </main>
 
 <footer>
-  <p>LINE: simpower91<br/>WeChat: simpower91<br/>FaceBook: simpower<br/></p>
-  <p data-lang="en">© 2025 spst. All rights reserved.</p>
-  <p data-lang="zh">© 2025 spst 版权所有。</p>
-  <p data-lang="ja">© 2025 spst. 無断転載禁止。</p>
+  <p data-lang="zh">
+    <span class="heart">💤</span> 静中生慧，睡梦里开花 <span class="heart">💤</span><br/>
+    © 2025 睡梦罗汉信息技术研发实验室. All rights reserved.
+  </p>
+  <p data-lang="en">
+    <span class="heart">💤</span> Wisdom born in silence, flowers bloom in dreams <span class="heart">💤</span><br/>
+    © 2025 Sleepy Arhat Information Technology Research Lab. All rights reserved.
+  </p>
+  <p data-lang="ja">
+    <span class="heart">💤</span> 静けさの中に知恵が生まれ、夢の中に花が咲く <span class="heart">💤</span><br/>
+    © 2025 睡夢羅漢情報技術研究所. All rights reserved.
+  </p>
 </footer>
 
 <script>
 function setLanguage(lang) {
   document.querySelectorAll('[data-lang]').forEach(el => {
-    el.style.display = el.dataset.lang === lang ? '' : 'none';
+    el.style.display = el.dataset.lang === lang ? 'inline-block' : 'none';
+    if (el.tagName === 'P' || el.tagName === 'DIV' || el.tagName === 'SECTION') {
+      el.style.display = el.dataset.lang === lang ? 'block' : 'none';
+    }
   });
   localStorage.setItem('lang', lang);
 }
