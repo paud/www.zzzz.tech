@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simpsuit - Multi-language Smart Browser</title>
+<style>
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0; padding: 0;
+  background: #f8f9fa;
+  color: #333;
+  text-align: center;
+}
+header {
+  background: #0078d7;
+  color: white;
+  padding: 20px 10px;
+}
+nav {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+nav button {
+  background: white;
+  color: #0078d7;
+  border: none;
+  padding: 5px 10px;
+  margin-left: 5px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+main {
+  padding: 40px 20px;
+}
+h1 { font-size: 2em; }
+.features {
+  max-width: 600px;
+  margin: 20px auto;
+  text-align: left;
+}
+.download-btn {
+  background: #0078d7;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2em;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 20px;
+}
+/* webviewRuntime按钮弱化样式 */
+a[href*="webview2.exe"] {
+  background: #a0c8e0 !important;
+  color: #000000 !important;
+  opacity: 0.7;
+  font-size: 1em !important;
+  padding: 12px 25px !important;
+}
+footer {
+  margin-top: 40px;
+  font-size: 0.9em;
+  color: #777;
+}
+</style>
+</head>
+<body>
+<header>
+  <h1 data-lang="en">Simpsuit - Smart Automation Browser</h1>
+  <h1 data-lang="zh">Simpsuit - 智能自动化浏览器</h1>
+  <h1 data-lang="ja">Simpsuit - スマート自動化ブラウザ</h1>
+  <nav>
+    <button onclick="setLanguage('zh')">中文</button>
+    <button onclick="setLanguage('en')">English</button>
+    <button onclick="setLanguage('ja')">日本語</button>
+  </nav>
+</header>
+<main>
+  <p data-lang="en">A browser that can inject scripts, fill forms, click buttons, submit automatically, and save data.</p>
+  <p data-lang="zh">一款可以注入代码、自动填写表单、点击按钮、提交并自保存数据的浏览器。</p>
+  <p data-lang="ja">コードを注入し、フォームを自動入力、ボタンをクリック、送信、データを自動保存できるブラウザです。</p>
+
+  <div class="features">
+    <ul data-lang="en">
+      <li>Script injection for automation, such as auto form filling and file downloading</li>
+      <li>Built-in MCPServer for agent integration</li>
+      <li>Full recording of HTTP(s) traffic, text, scripts, images, and multimedia files</li>
+      <li>Suitable for penetration testing</li>
+      <li>Lightweight desktop application</li>
+      <li>Compatible with almost all mainstream AI models, powerful context manager</li>
+    </ul>
+    <ul data-lang="zh">
+      <li>可注入脚本，实现自动化操作，比如自动填写表单，自动下载文件等</li>
+      <li>带MCPServer，可供智能体调用</li>
+      <li>全量记录HTTP(s)流量，文字，脚本 ，图片，多媒体文件等</li>
+      <li>可用于渗透测试</li>
+      <li>轻量级桌面应用</li>
+      <li>适配几乎所有主流AI模型，强大的Context管理器</li>
+    </ul>
+    <ul data-lang="ja">
+      <li>スクリプト注入による自動化操作（フォーム自動入力やファイル自動ダウンロードなど）</li>
+      <li>MCPServer搭載でエージェントからの呼び出しに対応</li>
+      <li>HTTP(s)トラフィック、テキスト、スクリプト、画像、マルチメディアファイルなどを完全記録</li>
+      <li>ペネトレーションテストにも利用可能</li>
+      <li>軽量なデスクトップアプリ</li>
+      <li>主要なAIモデルにほぼ全対応、強力なコンテキストマネージャ</li>
+    </ul>
+  </div>
+
+  <a class="download-btn" href="https://github.com/paud/paud.github.io/releases/download/0.1/SimpSuitInstaller.exe" target="_blank" data-lang="en">Download Installer</a>
+  <a class="download-btn" href="https://github.com/paud/paud.github.io/releases/download/0.1/spst.zip" target="_blank" data-lang="en">Download ZIP</a>
+  <a class="download-btn" href="https://github.com/paud/paud.github.io/releases/download/0.1/SimpSuitInstaller.exe" target="_blank" data-lang="zh">下载安装包</a>
+  <a class="download-btn" href="https://github.com/paud/paud.github.io/releases/download/0.1/spst.zip" target="_blank" data-lang="zh">下载 ZIP</a>
+  <a class="download-btn" href="https://github.com/paud/paud.github.io/releases/download/0.1/SimpSuitInstaller.exe" target="_blank" data-lang="ja">インストーラーダウンロード</a>
+  <a class="download-btn" href="https://github.com/paud/paud.github.io/releases/download/0.1/spst.zip" target="_blank" data-lang="ja">ZIPダウンロード</a>
+  
+  <div style="margin: 30px auto; max-width: 600px;">
+    <video width="600" controls poster="img/configModels.jpg">
+      <source src="video/configModels.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  
+  <br/><img src="img/1.png" width=600px><br/>
+  <br/><img src="img/2.png" width=600px><br/>
+  <br/><img src="img/3.png" width=600px><br/>
+  <br/><img src="img/4.png" width=600px><br/>
+  <br/><img src="img/5.png" width=600px><br/>
+  <br/><img src="img/6.png" width=600px><br/>
+  <br/><img src="img/7.png" width=600px><br/>
+
+  <a class="download-btn" href="https://github.com/paud/paud.github.io/releases/download/0.1/SimpSuitInstaller.exe" target="_blank" data-lang="en">Download Installer</a>
+  <a class="download-btn" href="https://github.com/paud/paud.github.io/releases/download/0.1/spst.zip" target="_blank" data-lang="en">Download ZIP</a>
+  <a class="download-btn" href="https://github.com/paud/paud.github.io/releases/download/0.1/webview2.exe" target="_blank" data-lang="en">Download webviewRuntime</a>
+  <a class="download-btn" href="https://github.com/paud/paud.github.io/releases/download/0.1/SimpSuitInstaller.exe" target="_blank" data-lang="zh">下载安装包</a>
+  <a class="download-btn" href="https://github.com/paud/paud.github.io/releases/download/0.1/spst.zip" target="_blank" data-lang="zh">下载 ZIP</a>
+  <a class="download-btn" href="https://github.com/paud/paud.github.io/releases/download/0.1/webview2.exe" target="_blank" data-lang="zh">下载 webviewRuntime</a>
+  <a class="download-btn" href="https://github.com/paud/paud.github.io/releases/download/0.1/SimpSuitInstaller.exe" target="_blank" data-lang="ja">インストーラーダウンロード</a>
+  <a class="download-btn" href="https://github.com/paud/paud.github.io/releases/download/0.1/spst.zip" target="_blank" data-lang="ja">ZIPダウンロード</a>
+  <a class="download-btn" href="https://github.com/paud/paud.github.io/releases/download/0.1/webview2.exe" target="_blank" data-lang="ja">webviewRuntimeダウンロード</a>
+</main>
+
+<footer>
+  <p>LINE: simpower91<br/>WeChat: simpower91<br/>FaceBook: simpower<br/></p>
+  <p data-lang="en">© 2025 spst. All rights reserved.</p>
+  <p data-lang="zh">© 2025 spst 版权所有。</p>
+  <p data-lang="ja">© 2025 spst. 無断転載禁止。</p>
+</footer>
+
+<script>
+function setLanguage(lang) {
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    el.style.display = el.dataset.lang === lang ? '' : 'none';
+  });
+  localStorage.setItem('lang', lang);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  let lang = localStorage.getItem('lang');
+  if (!lang) {
+    const userLang = navigator.language.toLowerCase();
+    if (userLang.startsWith('zh')) lang = 'zh';
+    else if (userLang.startsWith('ja')) lang = 'ja';
+    else lang = 'en';
+  }
+  setLanguage(lang);
+});
+</script>
+
+</body>
+</html>
+
+
