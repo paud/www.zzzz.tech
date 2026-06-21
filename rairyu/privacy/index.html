@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RaiRyu 隐私政策 / Privacy Policy</title>
+<style>
+  :root {
+    --bg: #f6f7fb;
+    --card: #ffffff;
+    --text: #1d1d1f;
+    --muted: #6e6e73;
+    --accent: #0a84ff;
+    --border: #e5e5ea;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #000;
+      --card: #1c1c1e;
+      --text: #f5f5f7;
+      --muted: #98989d;
+      --accent: #0a84ff;
+      --border: #2c2c2e;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB",
+                 "Microsoft YaHei", "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 32px 20px 64px;
+  }
+  header {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0 0 8px;
+    letter-spacing: -0.02em;
+  }
+  header p {
+    color: var(--muted);
+    margin: 0;
+    font-size: 14px;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px;
+    margin-bottom: 16px;
+  }
+  h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 24px 0 12px;
+    color: var(--text);
+  }
+  h2:first-child { margin-top: 0; }
+  p { margin: 0 0 12px; }
+  ul {
+    margin: 0 0 12px;
+    padding-left: 22px;
+  }
+  ul li { margin-bottom: 6px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .meta {
+    margin-top: 32px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+  }
+  .lang-switch {
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 14px;
+  }
+  .lang-switch a { margin: 0 8px; }
+  .en { display: none; }
+  body.lang-en .zh { display: none; }
+  body.lang-en .en { display: block; }
+  .effective {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 24px !important;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <h1>RaiRyu</h1>
+    <p class="zh">隐私政策</p>
+    <p class="en">Privacy Policy</p>
+  </header>
+
+  <div class="lang-switch">
+    <a href="#" onclick="document.body.classList.remove('lang-en'); return false;">中文</a>
+    |
+    <a href="#" onclick="document.body.classList.add('lang-en'); return false;">English</a>
+  </div>
+
+  <!-- ===== 中文 ===== -->
+  <div class="zh">
+    <div class="card">
+      <p class="effective">生效日期：2026 年 6 月 21 日</p>
+
+      <p>本隐私政策说明 RaiRyu（以下简称"本 App"）如何处理你的信息。我们尊重并保护每一位用户的隐私。</p>
+
+      <h2>1. 我们不收集的信息</h2>
+      <p>本 App 不会收集、存储、传输或共享以下信息：</p>
+      <ul>
+        <li>姓名、邮箱、电话号码等个人身份信息</li>
+        <li>位置信息</li>
+        <li>联系人、相册、日历等设备数据</li>
+        <li>用户行为追踪数据，不用于广告投放</li>
+        <li>不与任何第三方共享用户数据</li>
+      </ul>
+
+      <h2>2. 我们可能访问的本地数据</h2>
+      <p>为了实现 App 的核心功能，本 App 可能在你的设备本地访问以下数据，这些数据<strong>不会上传到我们的服务器</strong>：</p>
+      <ul>
+        <li><strong>UserDefaults</strong>：保存你的 App 偏好设置（如界面状态、缓存配置）</li>
+        <li><strong>本地文件缓存</strong>：缓存 Web 内容以加快加载速度并支持离线访问</li>
+        <li><strong>WKWebView Cookie / Storage</strong>：浏览功能所需的标准 Web 存储，仅在设备本地</li>
+      </ul>
+
+      <h2>3. 网络通信</h2>
+      <p>当 App 加载 Web 内容时，会向相应的服务器发起标准 HTTP/HTTPS 请求。这些请求由你访问的网页域名所有者按其自身的隐私政策处理，与本 App 开发者无关。</p>
+
+      <h2>4. 第三方服务</h2>
+      <p>本 App 不集成任何第三方分析、广告或追踪 SDK。</p>
+
+      <h2>5. 儿童隐私</h2>
+      <p>本 App 不针对 13 岁以下儿童设计，也不会有意收集任何儿童信息。</p>
+
+      <h2>6. 数据安全</h2>
+      <p>所有本地缓存的数据均存储在 iOS 系统提供的沙盒环境中，受 iOS 系统级权限保护。App 卸载后，所有数据将被系统自动清除。</p>
+
+      <h2>7. 政策变更</h2>
+      <p>如本政策发生重大变更,我们将在本页面公告新版本及生效日期。继续使用本 App 即表示你接受更新后的政策。</p>
+
+      <h2>8. 联系方式</h2>
+      <p>如果你对本隐私政策有任何疑问,请联系：</p>
+      <ul>
+        <li>邮箱：<a href="mailto:privacy@zzzz.tech">privacy@zzzz.tech</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ===== English ===== -->
+  <div class="en">
+    <div class="card">
+      <p class="effective">Effective Date: June 21, 2026</p>
+
+      <p>This Privacy Policy explains how RaiRyu (the "App") handles your information. We respect and protect the privacy of every user.</p>
+
+      <h2>1. Information We Do NOT Collect</h2>
+      <p>The App does not collect, store, transmit, or share any of the following:</p>
+      <ul>
+        <li>Personal identifiers such as name, email, or phone number</li>
+        <li>Location data</li>
+        <li>Contacts, photos, calendar, or other device data</li>
+        <li>Behavioral tracking data — we do not serve ads</li>
+        <li>We do not share user data with any third party</li>
+      </ul>
+
+      <h2>2. Local Data We May Access</h2>
+      <p>To deliver core functionality, the App may access the following data <strong>locally on your device only — never uploaded to our servers</strong>:</p>
+      <ul>
+        <li><strong>UserDefaults</strong>: stores app preferences (UI state, cache config)</li>
+        <li><strong>Local file cache</strong>: caches web content for faster loading and offline access</li>
+        <li><strong>WKWebView cookies / storage</strong>: standard web storage required for browsing, kept only on-device</li>
+      </ul>
+
+      <h2>3. Network Communication</h2>
+      <p>When loading web content, the App issues standard HTTP/HTTPS requests to the relevant servers. Those requests are governed by the privacy policies of the websites you visit, which are independent of this App's developer.</p>
+
+      <h2>4. Third-Party Services</h2>
+      <p>The App does not integrate any third-party analytics, advertising, or tracking SDKs.</p>
+
+      <h2>5. Children's Privacy</h2>
+      <p>The App is not directed to children under 13, and we do not knowingly collect any information from them.</p>
+
+      <h2>6. Data Security</h2>
+      <p>All locally cached data is stored within the iOS sandbox and protected by system-level permissions. Uninstalling the App removes all of its data automatically.</p>
+
+      <h2>7. Policy Changes</h2>
+      <p>If we make material changes to this policy, we will post the updated version and its effective date on this page. Continued use of the App constitutes acceptance of the updated policy.</p>
+
+      <h2>8. Contact</h2>
+      <p>For any questions about this Privacy Policy, please contact:</p>
+      <ul>
+        <li>Email: <a href="mailto:privacy@zzzz.tech">privacy@zzzz.tech</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="meta">
+    <p>&copy; <span id="year"></span> RaiRyu. All rights reserved.</p>
+    <p><a href="../support/">Support</a></p>
+  </div>
+
+</div>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  if (navigator.language && !navigator.language.toLowerCase().startsWith('zh')) {
+    document.body.classList.add('lang-en');
+  }
+</script>
+</body>
+</html>
