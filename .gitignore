@@ -1,0 +1,17 @@
+# ========== Node.js / Vite ==========
+node_modules/
+dist/
+dist-ssr/
+
+# 日志
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# 构建期自动生成的资源清单（由 build/assetManifestPlugin.js 生成）
+src/js/assetManifest.js
+
+# 系统文件
+.DS_Store
