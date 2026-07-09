@@ -216,43 +216,42 @@
 </div>
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
-  
-  let currentAppName = '本应用';
-  let currentLang = 'zh';
-  
-  function updateTitle() {
-    if (currentLang === 'en') {
-      document.title = currentAppName + ' Privacy Policy';
-    } else {
-      document.title = currentAppName + ' 隐私政策';
-    }
-  }
-  
-  function switchLang(lang) {
-    currentLang = lang;
-    if (lang === 'en') {
-      document.body.classList.add('lang-en');
-    } else {
-      document.body.classList.remove('lang-en');
-    }
-    updateTitle();
-  }
-  
+
   // 从 URL 参数 ?app= 获取应用名称
   const params = new URLSearchParams(window.location.search);
   const appName = params.get('app');
-  if (appName) {
-    currentAppName = appName;
-    document.getElementById('app-title').textContent = appName;
-    document.getElementById('app-name-zh').textContent = appName;
-    document.getElementById('app-name-en').textContent = appName;
-    document.getElementById('copyright-name').textContent = appName;
+  let currentLang = 'zh';
+
+  function getDisplayName() {
+    if (appName) return appName;
+    return currentLang === 'en' ? 'this App' : '本应用';
   }
-  
+
+  function getCopyrightName() {
+    return appName || 'zzzz.tech';
+  }
+
+  function applyNames() {
+    const name = getDisplayName();
+    document.getElementById('app-title').textContent = name;
+    document.getElementById('app-name-zh').textContent = name;
+    document.getElementById('app-name-en').textContent = name;
+    document.getElementById('copyright-name').textContent = getCopyrightName();
+    document.title = currentLang === 'en'
+      ? name + ' Privacy Policy'
+      : name + ' 隐私政策';
+  }
+
+  function switchLang(lang) {
+    currentLang = lang;
+    document.body.classList.toggle('lang-en', lang === 'en');
+    applyNames();
+  }
+
+  applyNames();
+
   if (navigator.language && !navigator.language.toLowerCase().startsWith('zh')) {
     switchLang('en');
-  } else {
-    updateTitle();
   }
 </script>
 </body>
