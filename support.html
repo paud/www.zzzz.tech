@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title><span id="page-title">本应用</span> 支持 / Support</title>
+<title id="page-title">本应用 支持 / Support</title>
 <style>
   :root {
     --bg: #f6f7fb;
@@ -112,9 +112,9 @@
   </header>
 
   <div class="lang-switch">
-    <a href="#" onclick="document.body.classList.remove('lang-en'); return false;">中文</a>
+    <a href="#" onclick="switchLang('zh'); return false;">中文</a>
     |
-    <a href="#" onclick="document.body.classList.add('lang-en'); return false;">English</a>
+    <a href="#" onclick="switchLang('en'); return false;">English</a>
   </div>
 
   <!-- ===== 中文 ===== -->
@@ -194,21 +194,43 @@
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
   
+  let currentAppName = '本应用';
+  let currentLang = 'zh';
+  
+  function updateTitle() {
+    if (currentLang === 'en') {
+      document.title = currentAppName + ' Support';
+    } else {
+      document.title = currentAppName + ' 技术支持';
+    }
+  }
+  
+  function switchLang(lang) {
+    currentLang = lang;
+    if (lang === 'en') {
+      document.body.classList.add('lang-en');
+    } else {
+      document.body.classList.remove('lang-en');
+    }
+    updateTitle();
+  }
+  
   // 从 URL 参数 ?app= 获取应用名称
   const params = new URLSearchParams(window.location.search);
   const appName = params.get('app');
   if (appName) {
-    document.getElementById('page-title').textContent = appName;
+    currentAppName = appName;
     document.getElementById('app-title').textContent = appName;
     document.getElementById('app-name-zh').textContent = appName;
     document.getElementById('app-name-en').textContent = appName;
     document.getElementById('copyright-name').textContent = appName;
-    document.title = appName + ' 支持 / Support';
   }
   
   // Auto-pick language by browser preference
   if (navigator.language && !navigator.language.toLowerCase().startsWith('zh')) {
-    document.body.classList.add('lang-en');
+    switchLang('en');
+  } else {
+    updateTitle();
   }
 </script>
 </body>
