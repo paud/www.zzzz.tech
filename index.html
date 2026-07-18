@@ -579,8 +579,8 @@ footer p {
   <section>
     <div class="projects-grid">
       <div class="project-card game-style-card">
-        <a href="https://www.zzzz.tech/ll/" class="game-card-image-link" data-popup-url="https://www.zzzz.tech/ll/" aria-label="打开睡冥想">
-          <img src="img/ll.png" alt="睡冥想" class="game-card-image">
+        <a href="https://www.zzzz.tech/ll/" class="game-card-image-link" data-game="plan" data-popup-url="https://www.zzzz.tech/ll/" aria-label="打开plan">
+          <img src="img/ll.png" alt="plan" class="game-card-image">
         </a>
       </div>
 
@@ -771,6 +771,13 @@ document.addEventListener('DOMContentLoaded', () => {
       openUrlDialog(link.dataset.popupUrl);
     });
   });
+
+  const requestedGame = new URLSearchParams(window.location.search).get('game');
+  if (requestedGame) {
+    const requestedLink = Array.from(document.querySelectorAll('[data-game]'))
+      .find(link => link.dataset.game === requestedGame);
+    requestedLink?.click();
+  }
 
   closeButton.addEventListener('pointerdown', event => {
     if (event.button !== 0 && event.pointerType === 'mouse') return;
