@@ -63,24 +63,32 @@ body::before {
 header {
   background: rgba(19, 21, 35, 0.85);
   backdrop-filter: blur(20px);
-  padding: 40px 20px;
+  padding: 22px 20px;
   position: relative;
   z-index: 1;
   border-bottom: 1px solid rgba(150, 180, 220, 0.2);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
+.header-brand {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
 .avatar {
-  width: 140px;
-  height: 140px;
+  flex: 0 0 auto;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   border: 4px solid rgba(150, 180, 220, 0.3);
-  margin: 0 auto 20px;
+  margin: 0;
   background: radial-gradient(circle, rgba(50, 60, 80, 0.8) 0%, rgba(30, 40, 60, 0.9) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 70px;
+  font-size: 46px;
   box-shadow: 0 0 40px rgba(150, 180, 220, 0.2), inset 0 0 30px rgba(150, 180, 220, 0.1);
   animation: glow 4s infinite ease-in-out, float-slow 6s infinite ease-in-out;
 }
@@ -90,8 +98,9 @@ h1 {
   font-size: 2.8em;
   font-weight: 500;
   color: #d4e0f0;
-  margin-bottom: 12px;
+  margin: 0;
   letter-spacing: 8px;
+  text-align: left;
   text-shadow: 0 2px 20px rgba(150, 180, 220, 0.2);
 }
 
@@ -259,6 +268,164 @@ h2 {
   transform: translateY(-2px);
 }
 
+/* 参考 game.zzzz.tech 的图片项目卡片 */
+.project-card.game-style-card {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  align-self: start;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  text-align: left;
+  color: #171717;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 16px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25),
+              0 8px 10px -6px rgba(0, 0, 0, 0.2);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card.game-style-card:hover {
+  transform: scale(1.05);
+  border-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+}
+
+.game-card-image-link {
+  display: block;
+  flex: 1;
+  width: 100%;
+  min-height: 0;
+  border-radius: inherit;
+  overflow: hidden;
+}
+
+.game-card-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.game-style-card:hover .game-card-image {
+  transform: scale(1.05);
+  filter: brightness(0.95);
+}
+
+.project-card.game-style-card h3 {
+  margin-bottom: 8px;
+  color: #2563eb;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0;
+  transition: color 0.3s ease;
+}
+
+.project-card.game-style-card:hover h3 {
+  color: #ec4899;
+}
+
+.project-card.game-style-card p {
+  margin-bottom: 12px;
+  color: #4b5563;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.game-style-card .game-card-action {
+  display: block;
+  width: 100%;
+  margin-top: auto;
+  padding: 8px 16px;
+  color: #fff;
+  background: linear-gradient(to right, #3b82f6, #ec4899);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.18);
+  text-align: center;
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.game-style-card .game-card-action:hover {
+  color: #fff;
+  background: linear-gradient(to right, #ec4899, #3b82f6);
+  border-color: transparent;
+  box-shadow: 0 6px 12px rgba(59, 130, 246, 0.25);
+  transform: none;
+}
+
+/* 全屏 URL 弹窗 */
+body.url-dialog-open {
+  overflow: hidden;
+}
+
+.url-dialog {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  background: #0f1419;
+}
+
+.url-dialog[hidden] {
+  display: none;
+}
+
+.url-dialog iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #fff;
+}
+
+.url-dialog-close {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 9999;
+  margin: 0;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #374151;
+  background: rgba(255, 255, 255, 0.7);
+  border: 0;
+  border-radius: 9999px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.75rem;
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  cursor: move;
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.url-dialog-close:active {
+  cursor: move;
+}
+
+.url-dialog-close:focus-visible {
+  outline: 3px solid rgba(150, 180, 220, 0.9);
+  outline-offset: 3px;
+}
+
 /* 技能区域 */
 .skills {
   background: rgba(30, 40, 60, 0.5);
@@ -357,8 +524,20 @@ footer p {
 
 /* 响应式适配 */
 @media (max-width: 768px) {
+  header {
+    padding: 18px 16px;
+  }
+  .header-brand {
+    gap: 14px;
+  }
+  .avatar {
+    width: 68px;
+    height: 68px;
+    font-size: 34px;
+  }
   h1 {
-    font-size: 2em;
+    font-size: 1.6em;
+    letter-spacing: 3px;
   }
   h2 {
     font-size: 1.6em;
@@ -368,7 +547,7 @@ footer p {
   }
   nav {
     position: static;
-    margin-top: 15px;
+    margin-bottom: 14px;
   }
 }
 
@@ -387,62 +566,22 @@ footer p {
     <button onclick="setLanguage('en')">English</button>
     <button onclick="setLanguage('ja')">日本語</button>
   </nav>
-  <div class="avatar">💤</div>
-  <h1 data-lang="zh">睡梦罗汉<br/>信息技术研发实验室</h1>
-  <h1 data-lang="en">Sleepy Arhat<br/>Info Tech Research Lab</h1>
-  <h1 data-lang="ja">睡夢羅漢<br/>情報技術研究所</h1>
-  <p class="subtitle" data-lang="zh">在睡梦中悟道，于寂静处研发 🧘</p>
-  <p class="subtitle" data-lang="en">Enlightenment in dreams, research in silence 🧘</p>
-  <p class="subtitle" data-lang="ja">夢の中で悟りを開き、静寂の中で研究 🧘</p>
-  <p style="margin-top: 8px; color: #8a9bb0; font-size: 1em; letter-spacing: 2px;">www.zzzz.tech</p>
+  <div class="header-brand">
+    <div class="avatar">💤</div>
+    <h1 data-lang="zh">睡梦罗汉<br/>信息技术研发实验室</h1>
+    <h1 data-lang="en">Sleepy Arhat<br/>Info Tech Research Lab</h1>
+    <h1 data-lang="ja">睡夢羅漢<br/>情報技術研究所</h1>
+  </div>
 </header>
 
 <main>
-  <!-- 自我介绍 -->
-  <div class="intro">
-    <p data-lang="zh">
-      你好！这里是睡梦罗汉信息技术研发实验室 🏔️<br/>
-      我们信奉「静中悟道，睡而生慧」，在半梦半醒之间寻找技术的真谛。<br/>
-      专注于研发让人放松、平静、治愈的数码产品。<br/>
-      欢迎访问：<a href="https://www.zzzz.tech" style="color: #d4e0f0; text-decoration: none; border-bottom: 1px solid rgba(150, 180, 220, 0.3);">www.zzzz.tech</a>
-    </p>
-    <p data-lang="en">
-      Hello! This is Sleepy Arhat Information Technology Research Lab 🏔️<br/>
-      We believe in "Enlightenment through tranquility, wisdom born from dreams",<br/>
-      seeking the true meaning of technology between wakefulness and sleep.<br/>
-      Focus on developing digital products that help people relax, find peace, and heal.
-    </p>
-    <p data-lang="ja">
-      こんにちは！ここは睡夢羅漢情報技術研究所です 🏔️<br/>
-      「静かに悟りを開き、夢から知恵を生む」を信念に、<br/>
-      覚醒と睡眠の間でテクノロジーの真髄を探しています。<br/>
-      人々をリラックスさせ、平和で癒しを与えるデジタル製品の開発に専念しています。
-    </p>
-  </div>
-
   <!-- 研发项目 -->
   <section>
-    <h2 data-lang="zh">实验室项目 🔬</h2>
-    <h2 data-lang="en">Lab Projects 🔬</h2>
-    <h2 data-lang="ja">研究プロジェクト 🔬</h2>
-    
     <div class="projects-grid">
-      <div class="project-card">
-        <div class="project-icon">😴</div>
-        <h3 data-lang="zh">睡冥想</h3>
-        <h3 data-lang="en">Sleep Meditation</h3>
-        <h3 data-lang="ja">スリープ瞑想</h3>
-        <p data-lang="zh">AI辅助催眠冥想应用，帮助你在梦境中寻找创作灵感。</p>
-        <p data-lang="en">AI-assisted hypnosis meditation app that helps you find creative inspiration in dreams.</p>
-        <p data-lang="ja">AI支援の催眠瞑想アプリ、夢の中で創作のインスピレーションを見つけるお手伝い。</p>
-        <div class="project-tags">
-          <span class="tag">AI</span>
-          <span class="tag">冥想</span>
-          <span class="tag">健康</span>
-        </div>
-        <a href="#" class="project-link" data-lang="zh">了解更多</a>
-        <a href="#" class="project-link" data-lang="en">Learn More</a>
-        <a href="#" class="project-link" data-lang="ja">詳細</a>
+      <div class="project-card game-style-card">
+        <a href="https://www.zzzz.tech/ll/" class="game-card-image-link" data-popup-url="https://www.zzzz.tech/ll/" aria-label="打开睡冥想">
+          <img src="img/ll.png" alt="睡冥想" class="game-card-image">
+        </a>
       </div>
 
       <div class="project-card">
@@ -537,22 +676,6 @@ footer p {
     </div>
   </section>
 
-  <!-- 研发领域 -->
-  <section class="skills">
-    <h2 data-lang="zh">研发领域 🔮</h2>
-    <h2 data-lang="en">Research Areas 🔮</h2>
-    <h2 data-lang="ja">研究分野 🔮</h2>
-    <div class="skill-list">
-      <div class="skill-item">冥想辅助AI</div>
-      <div class="skill-item">沉浸式开发环境</div>
-      <div class="skill-item">低干扰设计</div>
-      <div class="skill-item">身心信息技术</div>
-      <div class="skill-item">极简系统</div>
-      <div class="skill-item">梦境计算</div>
-      <div class="skill-item">禅意交互</div>
-    </div>
-  </section>
-
   <!-- 联系方式 -->
   <section class="contact">
     <h2 data-lang="zh">联系我们 📪</h2>
@@ -584,6 +707,17 @@ footer p {
   </p>
 </footer>
 
+<div id="url-dialog" class="url-dialog" role="dialog" aria-modal="true" aria-label="Sleep Meditation" hidden>
+  <iframe id="url-dialog-frame" title="Sleep Meditation" allowfullscreen></iframe>
+  <button id="url-dialog-close" class="url-dialog-close" type="button" aria-label="关闭弹窗" title="拖动或点击关闭">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="12" cy="12" r="12" fill="white" fill-opacity="0.7" />
+      <line x1="7" y1="7" x2="17" y2="17" stroke="#555" stroke-width="2" stroke-linecap="round" />
+      <line x1="17" y1="7" x2="7" y2="17" stroke="#555" stroke-width="2" stroke-linecap="round" />
+    </svg>
+  </button>
+</div>
+
 <script>
 function setLanguage(lang) {
   document.querySelectorAll('[data-lang]').forEach(el => {
@@ -604,6 +738,104 @@ document.addEventListener('DOMContentLoaded', () => {
     else lang = 'en';
   }
   setLanguage(lang);
+
+  const dialog = document.getElementById('url-dialog');
+  const frame = document.getElementById('url-dialog-frame');
+  const closeButton = document.getElementById('url-dialog-close');
+  let dragState = null;
+  let moved = false;
+
+  function resetCloseButton() {
+    closeButton.style.left = 'auto';
+    closeButton.style.top = '0';
+    closeButton.style.right = '0';
+  }
+
+  function openUrlDialog(url) {
+    frame.src = url;
+    dialog.hidden = false;
+    document.body.classList.add('url-dialog-open');
+    resetCloseButton();
+    closeButton.focus({ preventScroll: true });
+  }
+
+  function closeUrlDialog() {
+    dialog.hidden = true;
+    frame.src = 'about:blank';
+    document.body.classList.remove('url-dialog-open');
+  }
+
+  document.querySelectorAll('[data-popup-url]').forEach(link => {
+    link.addEventListener('click', event => {
+      event.preventDefault();
+      openUrlDialog(link.dataset.popupUrl);
+    });
+  });
+
+  closeButton.addEventListener('pointerdown', event => {
+    if (event.button !== 0 && event.pointerType === 'mouse') return;
+
+    const rect = closeButton.getBoundingClientRect();
+    dragState = {
+      pointerId: event.pointerId,
+      offsetX: event.clientX - rect.left,
+      offsetY: event.clientY - rect.top,
+      startX: event.clientX,
+      startY: event.clientY
+    };
+    moved = false;
+    closeButton.style.left = `${rect.left}px`;
+    closeButton.style.top = `${rect.top}px`;
+    closeButton.style.right = 'auto';
+    closeButton.setPointerCapture(event.pointerId);
+  });
+
+  closeButton.addEventListener('pointermove', event => {
+    if (!dragState || event.pointerId !== dragState.pointerId) return;
+
+    const dx = event.clientX - dragState.startX;
+    const dy = event.clientY - dragState.startY;
+    if (Math.hypot(dx, dy) > 3) moved = true;
+
+    const maxLeft = Math.max(0, window.innerWidth - closeButton.offsetWidth);
+    const maxTop = Math.max(0, window.innerHeight - closeButton.offsetHeight);
+    const left = Math.min(maxLeft, Math.max(0, event.clientX - dragState.offsetX));
+    const top = Math.min(maxTop, Math.max(0, event.clientY - dragState.offsetY));
+    closeButton.style.left = `${left}px`;
+    closeButton.style.top = `${top}px`;
+  });
+
+  function finishDrag(event) {
+    if (!dragState || event.pointerId !== dragState.pointerId) return;
+    if (closeButton.hasPointerCapture(event.pointerId)) {
+      closeButton.releasePointerCapture(event.pointerId);
+    }
+    dragState = null;
+  }
+
+  closeButton.addEventListener('pointerup', finishDrag);
+  closeButton.addEventListener('pointercancel', finishDrag);
+  closeButton.addEventListener('click', () => {
+    if (moved) {
+      moved = false;
+      return;
+    }
+    closeUrlDialog();
+  });
+
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && !dialog.hidden) closeUrlDialog();
+  });
+
+  window.addEventListener('resize', () => {
+    if (dialog.hidden) return;
+    const rect = closeButton.getBoundingClientRect();
+    const maxLeft = Math.max(0, window.innerWidth - closeButton.offsetWidth);
+    const maxTop = Math.max(0, window.innerHeight - closeButton.offsetHeight);
+    closeButton.style.left = `${Math.min(Math.max(0, rect.left), maxLeft)}px`;
+    closeButton.style.top = `${Math.min(Math.max(0, rect.top), maxTop)}px`;
+    closeButton.style.right = 'auto';
+  });
 });
 </script>
 
