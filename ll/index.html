@@ -4,6 +4,12 @@
   <meta charset="UTF-8">
   <title>Leilong Game</title>
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <!-- 禁止缓存 index.html：入口 JS 已改为固定名 game.js（见 vite.config.js），
+       需保证 index.html 本身每次都拉最新版，否则浏览器/CDN 缓存旧 index.html
+       会引用到旧版 game.js。带 hash 的分块/资源文件仍可长缓存。 -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
   <style>
     html, body {
       margin: 0;
@@ -23,7 +29,7 @@
     }
     /* #gameCanvas 样式由引擎平台层（simEngine BrowserPlatform）动态控制 */
   </style>
-  <script type="module" crossorigin src="./assets/DZaGnXkF.js"></script>
+  <script type="module" crossorigin src="./assets/game.js"></script>
 </head>
 <body>
 </body>
