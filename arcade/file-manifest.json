@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "baseURL": "",
+  "generatedAt": "2026-07-21T14:41:35.875Z",
+  "files": [
+    {
+      "path": "assets/CBKqYJwE.js",
+      "size": 31826,
+      "sha256": "5c8daf84ea5a83026fadfd5451848e61ac718db05c3ea1f3721c3fec05c95c44"
+    },
+    {
+      "path": "assets/CBKqYJwE.js.gz",
+      "size": 12142,
+      "sha256": "c2682b02133d3cce95e899c00d8a792a8796c2a0fa5b7d968091efbdb248d4b8"
+    },
+    {
+      "path": "assets/DlyZhlQH.wasm",
+      "size": 21132,
+      "sha256": "d85cd34e45e00e183572f135935e7f0ff6f69206ee12bdacc77728ce5d0bce1a"
+    },
+    {
+      "path": "assets/DlyZhlQH.wasm.gz",
+      "size": 9855,
+      "sha256": "48e0494174463c8d1d21db87eb3d05370adb326829454884185fffa508e40567"
+    },
+    {
+      "path": "assets/game.js",
+      "size": 360898,
+      "sha256": "d169ed641c81f1c7109d3dcfcf955f99019ec294c2b687ffa172db14ce3a3323"
+    },
+    {
+      "path": "assets/game.js.gz",
+      "size": 99838,
+      "sha256": "d7eda6752e8bb2ba074b904a74b6ae52b1aa2c5157f37ef2fe7e605c3294b4cf"
+    },
+    {
+      "path": "assets/k12-OS9O.wasm",
+      "size": 2681999,
+      "sha256": "3a34607534f4cacf4851457c188dac56a2b5fb42dcc2cbd8459f43cc55728a05"
+    },
+    {
+      "path": "assets/k12-OS9O.wasm.gz",
+      "size": 562797,
+      "sha256": "509d8316d8875213e4d738d6af0ebbf1fa5f1f8b4e32382962c7af5b3ce3e2e4"
+    },
+    {
+      "path": "index.html",
+      "size": 1093,
+      "sha256": "b9baf405e602a7b047608c34c412d0bff5869d22bd0b5ab20e610319a41f54ec"
+    },
+    {
+      "path": "index.html.gz",
+      "size": 694,
+      "sha256": "595c364381fa7b5e9f2fc483efa33c4567318c27899ccd60e03796c28b0142b7"
+    }
+  ]
+}
