@@ -1,7 +1,7 @@
 {
   "version": 1,
   "baseURL": "",
-  "generatedAt": "2026-07-22T22:42:23.970Z",
+  "generatedAt": "2026-07-23T01:01:48.174Z",
   "files": [
     {
       "path": "assets/CBKqYJwE.js",
@@ -25,13 +25,13 @@
     },
     {
       "path": "assets/game.js",
-      "size": 369203,
-      "sha256": "485349e7bb119dcf508b2bf382ce0c2fdbf60351d2e41c1882dd19e4183ccad6"
+      "size": 369782,
+      "sha256": "8678d7c85d109b5950a0c911da8cd984f27a95a11495686f8d6ccfab6aef426c"
     },
     {
       "path": "assets/game.js.gz",
-      "size": 102222,
-      "sha256": "045b143c0187230a0868ff3ecbf4b29f420cab5de8c7fb0a8914069302275815"
+      "size": 102443,
+      "sha256": "3de6f97321e9ee23766e718bd56d4f0ebaf7596d43066f307500ee8016f58924"
     },
     {
       "path": "assets/k12-OS9O.wasm",
